@@ -207,8 +207,8 @@ void ToggleLid(){
 }
 
 void OpenLid(){
-  if(servoPos < 180){
-    for (servoPos = 0; servoPos <= 180; servoPos += 1) { // goes from 0 degrees to 180 degrees
+  if(servoPos < 90){
+    for (servoPos = 0; servoPos <= 90; servoPos += 1) { // goes from 0 degrees to 180 degrees
       // in steps of 1 degree
       colorLid.write(servoPos);              // tell servo to go to position in variable 'pos'
       delay(5);                       // waits 15ms for the servo to reach the position
@@ -219,9 +219,9 @@ void OpenLid(){
 
 void CloseLid(){
   if(servoPos > 0){
-    for (servoPos = 180; servoPos >= 0; servoPos -= 1) { // goes from 180 degrees to 0 degrees
+    for (servoPos = 90; servoPos >= 0; servoPos -= 1) { // goes from 180 degrees to 0 degrees
       colorLid.write(servoPos);              // tell servo to go to position in variable 'pos'
-      delay(5);                       // waits 15ms for the servo to reach the position
+      delay(15);                       // waits 15ms for the servo to reach the position
     }
   }
   lidOpen = false;
